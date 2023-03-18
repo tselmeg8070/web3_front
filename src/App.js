@@ -6,7 +6,7 @@ import store from './store';
 import history from './history'
 import Layouts from './layouts'
 import { THEME_CONFIG } from './configs/AppConfig';
-import mockServer from './mock'
+// import mockServer from './mock'
 import './lang'
 
 const themes = {
@@ -16,23 +16,23 @@ const themes = {
 
 const environment = process.env.NODE_ENV
 
-if (environment !== 'production') {
-	mockServer({ environment })
-}
+// if (environment !== 'production') {
+// 	mockServer({ environment })
+// }
 
 function App() {
   return (
     <div className="App">
       <Provider store={store}>
         <BrowserRouter history={history}>
-          <ThemeSwitcherProvider 
-            themeMap={themes} 
-            defaultTheme={THEME_CONFIG.currentTheme} 
+          <ThemeSwitcherProvider
+            themeMap={themes}
+            defaultTheme={THEME_CONFIG.currentTheme}
             insertionPoint="styles-insertion-point"
           >
             <Layouts />
           </ThemeSwitcherProvider>
-        </BrowserRouter>  
+        </BrowserRouter>
       </Provider>
     </div>
   );

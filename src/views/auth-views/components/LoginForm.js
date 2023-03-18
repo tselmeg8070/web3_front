@@ -37,24 +37,14 @@ export const LoginForm = props => {
 	} = props
 
 	const initialCredential = {
-		email: 'user1@themenate.net',
-		password: '2005ipo'
+		email: '',
+		password: ''
 	}
 
 	const onLogin = values => {
 		showLoading()
 		signIn(values);
 	};
-
-	const onGoogleLogin = () => {
-		showLoading()
-		signInWithGoogle()
-	}
-
-	const onFacebookLogin = () => {
-		showLoading()
-		signInWithFacebook()
-	}
 
 	useEffect(() => {
 		if (token !== null && allowRedirect) {

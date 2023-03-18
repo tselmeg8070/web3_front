@@ -19,15 +19,17 @@ export const initialState = {
  * 	token: "fjdsklajfka"
  * }
  */
-export const signIn = createAsyncThunk('auth/login',async (data, { rejectWithValue }) => {
+export const signIn = createAsyncThunk('auth/login', async (data, { rejectWithValue }) => {
 	const { email, password } = data
 	try {
+		console.log("Data", data)
 		const response = await AuthService.login({email, password})
-		const token = response.data.token;
+		console.log("Data", response.token)
+		const token = response.token;
 		localStorage.setItem(AUTH_TOKEN, token);
 		return token;
 	} catch (err) {
-		return rejectWithValue(err.response?.data?.message || 'Error')
+		return rejectWithValue(err.response?.message || 'Error')
 	}
 })
 
@@ -41,7 +43,8 @@ export const signUp = createAsyncThunk('auth/register',async (data, { rejectWith
 	const { email, password } = data
 	try {
 		const response = await AuthService.register({email, password})
-		return response.data;
+		console.log(response.data);
+		return "ok";
 	} catch (err) {
 		return rejectWithValue(err.response?.data?.message || 'Error')
 	}
