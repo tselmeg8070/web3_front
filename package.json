@@ -4,7 +4,10 @@
   "private": true,
   "dependencies": {
     "@hello-pangea/dnd": "^16.0.0",
+    "@pixi/react": "^7.0.3",
     "@reduxjs/toolkit": "^1.8.5",
+    "@tensorflow-models/posenet": "^2.2.2",
+    "@tensorflow/tfjs": "^4.2.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -24,6 +27,7 @@
     "install": "^0.13.0",
     "lodash": "^4.17.20",
     "miragejs": "^0.1.43",
+    "pixi.js": "^7.2.3",
     "postcss-normalize": "^10.0.1",
     "rc-tween-one": "^3.0.6",
     "rc-virtual-list": "^3.4.11",
@@ -57,6 +61,7 @@
     "remark-gfm": "^3.0.1",
     "reqwest": "^2.0.5",
     "save": "^2.4.0",
+    "tone": "^14.7.77",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
